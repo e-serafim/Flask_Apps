@@ -1,8 +1,9 @@
 ### Flask_Apps ###
 
-Aplicativos desenvolvidos:
+#### Aplicativos desenvolvidos ####
 
-1) Hello World
+1) Hello World: 
+    Aplicativo simples com apenas uma tela de Hello World
 
 #### Rodando os apps ####
 
