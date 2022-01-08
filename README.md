@@ -3,3 +3,7 @@
 Aplicativos desenvolvidos:
 
 1) Hello World
+
+## Rodando os apps ##
+
+
