@@ -8,4 +8,14 @@
     <div>
         <h1 class="mt-2">Em construção</h1>
     </div>
+    <div class="mt-2">
+        <ul>
+            {% for user in users %}
+                <li>
+                    {{user.id}}
+                    {{user.name}}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock content %}

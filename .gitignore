@@ -1,1 +1,3 @@
 .venv
+Autenticacao_Simples/__pycache__/*
+Autenticacao_Simples/app.db
