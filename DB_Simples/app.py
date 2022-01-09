@@ -26,6 +26,15 @@ def index():
     
     return render_template('index.html', users=users)
 
+@app.route("/user/delete/<int:id>")
+def delete(id):
+    user = User.query.filter_by(id=id).first()
+    db.session.delete(user)
+    db.session.commit()
+
+    return redirect(url_for('index'))
+
+
 @app.route("/cria-db")
 def cria_db():
     db.create_all()
@@ -37,6 +46,22 @@ def cria_db():
     db.session.commit()
     
     return redirect(url_for('index'))
+
+# Criar a base de dados
+# db.create_all()
+
+# Adicionar um registro
+# user=User()
+# user.name="Erivan"
+# user.login="Erivan_login"
+# user.password="123"
+# db.session.add(user)
+# db.session.commit()
+
+# Deletar um registro
+# user = User.query.filter_by(id=id).first()
+# db.session.delete(user)
+# db.session.commit()
 
 
 if __name__ == "__main__":
