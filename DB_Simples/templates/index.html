@@ -6,15 +6,13 @@
 
 {% block content %}
     <div>
-        <h1 class="mt-2">Em construção</h1>
+        <h1 class="mt-2">Lista de usuários</h1>
     </div>
     <div class="mt-2">
         <ul>
             {% for user in users %}
                 <li>
-                    {{user.id}}
-                    {{user.name}}
-                    <a href="{{url_for('delete', id=user.id)}}">Deletar</a>
+                    <a href="{{url_for('info', id=user.id)}}">{{user.name}}</a>
                 </li>
             {% endfor %}
         </ul>

@@ -1,3 +1,4 @@
+from enum import unique
 from flask import Flask, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -11,9 +12,7 @@ db = SQLAlchemy(app)
 class User(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(84), nullable=False)
-    login = db.Column(db.String(84), nullable=False, unique=True, index=True)
-    password = db.Column(db.String(255), nullable=False)
+    name = db.Column(db.String(84), nullable=False, unique=True)
 
     def __str__(self):
         return self.name
@@ -26,6 +25,28 @@ def index():
     
     return render_template('index.html', users=users)
 
+@app.route("/cria-db")
+def cria_db():
+    db.create_all()
+    
+    return redirect(url_for('index'))
+
+@app.route("/user/info/<int:id>")
+def info(id):
+    user = User.query.filter_by(id=id).first()
+
+    return render_template('user.html', user=user)
+
+
+@app.route("/user/add/<name>")
+def add(name):
+    user=User()
+    user.name=name
+    db.session.add(user)
+    db.session.commit()
+
+    return redirect(url_for('index'))
+
 @app.route("/user/delete/<int:id>")
 def delete(id):
     user = User.query.filter_by(id=id).first()
@@ -33,36 +54,6 @@ def delete(id):
     db.session.commit()
 
     return redirect(url_for('index'))
-
-
-@app.route("/cria-db")
-def cria_db():
-    db.create_all()
-    user=User()
-    user.name="Erivan"
-    user.login="Erivan_login"
-    user.password="123"
-    db.session.add(user)
-    db.session.commit()
-    
-    return redirect(url_for('index'))
-
-# Criar a base de dados
-# db.create_all()
-
-# Adicionar um registro
-# user=User()
-# user.name="Erivan"
-# user.login="Erivan_login"
-# user.password="123"
-# db.session.add(user)
-# db.session.commit()
-
-# Deletar um registro
-# user = User.query.filter_by(id=id).first()
-# db.session.delete(user)
-# db.session.commit()
-
 
 if __name__ == "__main__":
     app.run(debug=True)
