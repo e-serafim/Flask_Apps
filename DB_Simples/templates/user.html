@@ -9,12 +9,12 @@
         <h1 class="mt-2">Detalhe Usuários</h1>
     </div>
     <div class="mt-2">
+        <h4>{{user.id}}. {{user.name}}</h4>
         <ul>
-            <li>
-                {{user.id}}
-                {{user.name}}
-                <a href="{{url_for('delete', id=user.id)}}">Deletar</a>
-            </li>
+            {% for pokemon in user.pokemons %}
+                <li>{{pokemon.name}}</li>
+            {% endfor %}
+            <a class="ml-5" href="{{url_for('delete', id=user.id)}}">Deletar usuário</a>
         </ul>
     </div>
 {% endblock content %}
