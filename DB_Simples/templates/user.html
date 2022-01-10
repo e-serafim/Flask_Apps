@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    App
+{% endblock title %}
+
+{% block content %}
+    <div>
+        <h1 class="mt-2">Detalhe Usuários</h1>
+    </div>
+    <div class="mt-2">
+        <ul>
+            <li>
+                {{user.id}}
+                {{user.name}}
+                <a href="{{url_for('delete', id=user.id)}}">Deletar</a>
+            </li>
+        </ul>
+    </div>
+{% endblock content %}
