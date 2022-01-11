@@ -12,6 +12,9 @@
     <li>Objetivo: Entender como usar db no flask</li>
     <li>Funcionamento: Cria um database com duas tabelas "Users" e "Pokemons". É possivel criar usuários e atribuir pokemons a esses usuários</li> 
 </ul>
+<ul>
+    <b>Autenticação_Simples</b>
+</ul>
 
 #### Rodando os apps ####
 
