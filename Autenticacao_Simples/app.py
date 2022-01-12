@@ -69,7 +69,12 @@ def login():
             flash('Senha incorreta!', 'danger')
             return render_template('login.html')
 
-        login_user(user, remember=True if check=="on" else False, duration=timedelta(days=30))
+        if check:
+            remember=True
+        else:
+            remember=False
+
+        login_user(user, remember=remember, duration=timedelta(days=30))
         return redirect(url_for('index'))
 
     return render_template('login.html')
