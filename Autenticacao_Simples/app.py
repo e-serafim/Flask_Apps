@@ -58,7 +58,10 @@ def login():
     if request.method == "POST":
         email = request.form['email']
         senha = request.form['pwd']
-        check = request.form['lembrar']
+        if 'lembrar' in request.form:
+            remember=True
+        else:
+            remember=False
 
         user =  User.query.filter_by(email=email).first()
         if not user:
@@ -68,11 +71,6 @@ def login():
         if not check_password_hash(user.password, senha):
             flash('Senha incorreta!', 'danger')
             return render_template('login.html')
-
-        if check:
-            remember=True
-        else:
-            remember=False
 
         login_user(user, remember=remember, duration=timedelta(days=30))
         return redirect(url_for('index'))
