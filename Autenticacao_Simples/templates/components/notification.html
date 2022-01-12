@@ -1,7 +1,7 @@
-{% with msgs = get_flashed_messages() %}
+{% with msgs = get_flashed_messages(with_categories=True) %}
     {% if msgs %}
-        {% for msg in msgs %}
-            <div class="mt-2 alert alert-info text-center" role="alert">
+        {% for cat, msg in msgs %}
+            <div class="mt-2 alert alert-{{cat}} text-center" role="alert">
                 {{msg}}
             </div>
         {% endfor %}
