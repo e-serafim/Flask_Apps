@@ -1,0 +1,9 @@
+{% with msgs = get_flashed_messages() %}
+    {% if msgs %}
+        {% for msg in msgs %}
+            <div class="mt-2 alert alert-info text-center" role="alert">
+                {{msg}}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}

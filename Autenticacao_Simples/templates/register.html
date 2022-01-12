@@ -5,6 +5,7 @@
 {% endblock title %}
 
 {% block content %}
+{% include 'components/notification.html' %}
     <form action="{{ url_for('register') }}" method="POST">
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
