@@ -9,7 +9,7 @@ def current_user(user_id):
 @login_manager.unauthorized_handler
 def unauthorized_callback():
     flash('Você tem que estar logado!', 'danger')
-    return redirect(url_for('login'))
+    return redirect(url_for('auth.login'))
 
 
 class User(db.Model, UserMixin):
