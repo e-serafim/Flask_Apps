@@ -46,7 +46,7 @@ def login():
             return render_template('login.html')
 
         login_user(user, remember=remember, duration=timedelta(days=30))
-        return redirect(url_for('index'))
+        return redirect(url_for('user.index'))
 
     return render_template('login.html')
 
