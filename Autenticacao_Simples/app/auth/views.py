@@ -20,7 +20,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        flash('Usuário cadastrado com suceso!', 'success')
+        flash('Usuário cadastrado com sucesso!', 'success')
 
         return redirect(url_for('auth.login'))
 

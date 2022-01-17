@@ -26,6 +26,6 @@ def delete(id):
     db.session.delete(user)
     db.session.commit()
 
-    flash('Usuário deletado com suceso!', 'danger')
+    flash('Usuário deletado com sucesso!', 'danger')
 
     return redirect(url_for('user.index'))
