@@ -21,7 +21,7 @@
     <b>Envio_Email</b>
     <li>Criado a partir do App: Autenticação_Simples</li>
     <li>Objetivo: Implementar o envio de e-mails com anexos</li>
-    <li>Funcionamento: Quando um usuário é cadastrado um e-mail de boas-vindas é enviado com um arquivo txt em anexo</li>
+    <li>Funcionamento: Quando um usuário é cadastrado um e-mail de boas-vindas é enviado com um arquivo txt em anexo. É necessário configurar a função manda_email do arquivo functions.py com um e-mail válido!</li>
 </ul>
 
 #### Rodando os apps ####
