@@ -15,7 +15,7 @@
 <ul>
     <b>Autenticação_Simples</b>
     <li>Objetivo: Implementar autenticação utilizando flask-login e formulários; Implementar testes de login utilizando pytest</li>
-    <li>Funcionamento: Cria um database com uma tabela "Users". É possivel se registrar, logar e quando logado apagar usuários</li>
+    <li>Funcionamento: Cria um database com uma tabela "Users". É possivel se registrar, logar e quando logado apagar usuários. Também podemos utilizar o pytest para testar as funções básicas da aplicação</li>
 </ul>
 
 #### Rodando os apps ####
