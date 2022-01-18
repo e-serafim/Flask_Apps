@@ -47,3 +47,14 @@ def test_register_e_logando_usuario(client):
     client.post('/register', data=data, follow_redirects=True)
     response = client.post('/login', data=data, follow_redirects=True)
     assert "Sair" in response.get_data(as_text=True)
+
+def test_register_e_errando_senha_no_login(client):
+    data = {
+        'name': 'Zezinho',
+        'email': 'Zezinho@teste.com',
+        'pwd': '123'
+    }
+    client.post('/register', data=data, follow_redirects=True)
+    data['pwd']='1234'
+    response = client.post('/login', data=data, follow_redirects=True)
+    assert "Senha incorreta!" in response.get_data(as_text=True)
