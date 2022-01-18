@@ -1,6 +1,7 @@
 from datetime import timedelta
 
 from app import db
+from app.functions import manda_email
 from app.models import User
 from flask import flash, redirect, render_template, request, url_for
 from flask_login import login_required, login_user, logout_user
@@ -20,7 +21,10 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        flash('Usuário cadastrado com sucesso!', 'success')
+        if manda_email(user.email, user.name):
+            flash('Usuário cadastrado com sucesso! E-mail de boas-vindas enviado!', 'success')
+        else:
+            flash('Usuário cadastrado com sucesso! E-mail de boas-vindas falhou!', 'warning')
 
         return redirect(url_for('auth.login'))
 
