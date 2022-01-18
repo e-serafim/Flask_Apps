@@ -17,6 +17,12 @@
     <li>Objetivo: Implementar autenticação utilizando flask-login e formulários; Implementar testes de login utilizando pytest</li>
     <li>Funcionamento: Cria um database com uma tabela "Users". É possivel se registrar, logar e quando logado apagar usuários. Também podemos utilizar o pytest para testar as funções básicas da aplicação</li>
 </ul>
+<ul>
+    <b>Envio_Email</b>
+    <li>Criado a partir do App: Autenticação_Simples</li>
+    <li>Objetivo: Implementar o envio de e-mails com anexos</li>
+    <li>Funcionamento: Quando um usuário é cadastrado um e-mail de boas vindas é enviado com um arquivo txt em anexo</li>
+</ul>
 
 #### Rodando os apps ####
 
