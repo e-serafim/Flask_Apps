@@ -1,6 +1,6 @@
-### Flask_Apps ###
-
-#### Aplicativos desenvolvidos ####
+### Flask_Apps
+###### Desenvolvendo aplicativos básicos para entender os conceitos de uma aplicação utilizando o Flask
+#### Aplicativos desenvolvidos
 
 <ul>
     <b>Hello_World</b>
@@ -30,7 +30,7 @@
     <li>Funcionamento: GET pega os nomes dos usuários, POST cadastra um usuário, PUT modifica a senha de um usuário, DELETE deleta um usuário</li>
 </ul>
 
-#### Rodando os apps ####
+#### Rodando os apps
 
 - Criar ambiente virtual (python -m venv .venv)
 - Entrar no ambiente virtual (.venv\Scripts\activate)
