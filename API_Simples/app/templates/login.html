@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content %}
+{% include 'components/notification.html' %}
+    <form action="{{ url_for('auth.login') }}" method="POST">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="exemplo@exemplo.com">
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="form-label">Password</label>
+            <input type="password" class="form-control" name="pwd" placeholder="*****">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" name="lembrar">
+            <label class="form-check-label" for="lembrar">Lembrar-me</label>
+        </div>
+        <button type="submit" class="btn btn-block btn-success">Entrar</button>
+    </form>
+{% endblock content %}
