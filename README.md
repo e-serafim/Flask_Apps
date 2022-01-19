@@ -27,7 +27,7 @@
     <b>API_Simples</b>
     <li>Criado a partir do App: Autenticação_Simples</li>
     <li>Objetivo: Implementar uma API simples</li>
-    <li>Funcionamento: TBD</li>
+    <li>Funcionamento: GET pega os nomes dos usuários, POST cadastra um usuário, PUT modifica a senha de um usuário, DELETE deleta um usuário</li>
 </ul>
 
 #### Rodando os apps ####
